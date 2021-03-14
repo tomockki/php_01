@@ -1,0 +1,42 @@
+.h1 {
+    text-align: center;
+    background-color: aquamarine; 
+ }
+ 
+ .h2 {
+     text-align: center;
+ }
+ 
+ .syobu {
+     display: flex;
+ }
+ 
+ .te {
+     height: 300px;
+     width: 300px;
+     background: rgb(251, 255, 0);
+     line-height: 10;
+     font-size: 30px;
+     text-align: center;
+     margin: auto;
+ }
+ .kekka {
+     height: 300px;
+     width: 300px;
+     background: aqua;
+     line-height: 10;
+     font-size: 30px;
+     text-align: center;
+     margin: auto;
+     margin-bottom: 20px;
+ }
+ 
+ .janken {
+     display: flex;
+     justify-content: space-evenly;
+ }
+ 
+ .kekkatext {
+     font-size: 30px;
+     text-align: center;
+ }
