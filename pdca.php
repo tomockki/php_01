@@ -1,12 +1,3 @@
-<?php
-
-$p = $_POST["p"];
-$d = $_POST["d"];
-$c = $_POST["c"];
-$a = $_POST["a"];
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +7,22 @@ $a = $_POST["a"];
     <title>Document</title>
 </head>
 <body>
-    <h1>あなたのPDCAサイクルは回った？</h1>
+    <header>
+        <h1>あなたのPDCAサイクルは回った？</h1>
+    </header>
+    <section>
+        <?php
+            $p = $_POST["p"];
+            $d = $_POST["d"];
+            $c = $_POST["c"];
+            $a = $_POST["a"];
+        ?>
+        
         <p><?=$p?></p>
         <p><?=$d?></p>
         <p><?=$c?></p>
         <p><?=$a?></p>
+        <button type="button" onclick="history.back()">戻る</button>
+    </section>
 </body>
 </html>
