@@ -10,6 +10,7 @@
     <header>
         <h1>あなたのPDCAサイクルは回った？</h1>
     </header>
+
     <section>
         <?php
             $p = $_POST["p"];
@@ -17,7 +18,6 @@
             $c = $_POST["c"];
             $a = $_POST["a"];
         ?>
-        
         <p><?=$p?></p>
         <p><?=$d?></p>
         <p><?=$c?></p>

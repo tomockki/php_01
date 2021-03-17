@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +10,29 @@
 </head>
 <body>
 
+    <?php
+        try {
+            $db = new PDO('mysql:dbname=pdca;host=localhost;charset=utf8','tomo','tomockki@yahoo.co.jp');
+            echo "接続OK！";
+        } catch (PDOException $e) {
+            echo 'DB接続エラー！: ' . $e->getMessage();
+        }
+    ?>
+
     <header>
         <h1>PDCAサイクルを回そう！</h1>
     </header>
 
-    <section>
+    <section class = "form">
         <form action="pdca.php" method="post">
-            <p>計画(Plan)<br><textarea name="p" class="plan" cols="50" rows="20"></textarea></p>
-            <p>行動(Do)<br><textarea name="d" class="do" cols="50" rows="20"></textarea></p>
-            <p>評価(Check)<br><textarea name="c" class="check" cols="50" rows="20"></textarea></p>
-            <p>改善(Action)<br><textarea name="a" class="act" cols="50" rows="20"></textarea></p>
+            <div class = "fp">計画(Plan)<br><textarea name="p" class="plan" cols="50" rows="20"></textarea></div>
+            <div class = "fd">行動(Do)<br><textarea name="d" class="do" cols="50" rows="20"></textarea></div>
+            <div class = "fc">評価(Check)<br><textarea name="c" class="check" cols="50" rows="20"></textarea></div>
+            <div class = "fa">改善(Action)<br><textarea name="a" class="act" cols="50" rows="20"></textarea></div>
             <p><input type="submit" value="登録"></p>
         </form>
     </section>
+
+
 </body>
 </html>
