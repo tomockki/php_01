@@ -8,21 +8,29 @@
 </head>
 <body>
     <header>
-        <h1>あなたのPDCAサイクルは回った？</h1>
+        <h1>あなたのPDCAサイクル</h1>
     </header>
 
-    <section>
-        <?php
-            $p = $_POST["p"];
-            $d = $_POST["d"];
-            $c = $_POST["c"];
-            $a = $_POST["a"];
-        ?>
-        <p><?=$p?></p>
-        <p><?=$d?></p>
-        <p><?=$c?></p>
-        <p><?=$a?></p>
-        <button type="button" onclick="history.back()">戻る</button>
-    </section>
+    <?php
+  try {
+    $db = new PDO('mysql:dbname=pdca;host=localhost;charset=utf8','','');
+
+    $p = $_POST['p'];
+    $d = $_POST['d'];
+    $c = $_POST['c'];
+    $a = $_POST['a'];
+
+    $pdca = $db->exec('INSERT INTO plan SET pla = "'.$p.'" do = "'.$d.'" che = "'.$c.'" act = "'.$a.'"');
+
+    echo "<p>計画: ".$p."</p>";
+    echo "<p>実行: ".$d."</p>";
+    echo "<p>評価: ".$c."</p>";
+    echo "<p>改善: ".$a."</p>";
+    echo '<p>で登録しました。</p>';
+  } catch (PDOException $e) {
+  exit('データベースに接続できませんでした。' . $e->getMessage());
+  }
+
+?>
 </body>
 </html>

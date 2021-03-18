@@ -10,15 +10,6 @@
 </head>
 <body>
 
-    <?php
-        try {
-            $db = new PDO('mysql:dbname=pdca;host=localhost;charset=utf8','tomo','tomockki@yahoo.co.jp');
-            echo "接続OK！";
-        } catch (PDOException $e) {
-            echo 'DB接続エラー！: ' . $e->getMessage();
-        }
-    ?>
-
     <header>
         <h1>PDCAサイクルを回そう！</h1>
     </header>
@@ -32,7 +23,5 @@
             <p><input type="submit" value="登録"></p>
         </form>
     </section>
-
-
 </body>
 </html>
